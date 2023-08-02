@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<form onsubmit="return validateForm()">
+    <label for="textbox">Enter your text:</label>
+    <input type="text" id="textbox" name="textbox">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+    var textboxValue = document.getElementById("textbox").value.trim();
+    if (textboxValue === "") {
+        alert("Please enter some text in the textbox.");
+        return false; // Prevent form submission
+    }
+    // You can add more validation logic here if needed.
+
+    // Form is valid, allow submission.
+    return true;
+}
+</script>
+
+</body>
+</html>

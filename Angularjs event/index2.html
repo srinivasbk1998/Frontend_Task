@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myController">
+  <h1>DOM Manipulation with AngularJS Directives</h1>
+  
+  <!-- Example using ng-show and ng-hide -->
+  <button ng-click="toggleText()">Toggle Text</button>
+  <p ng-show="showText">This text is visible.</p>
+  <p ng-hide="showText">This text is hidden.</p>
+  
+  <!-- Example using ng-disabled -->
+  <input type="text" ng-model="inputValue" placeholder="Type something">
+  <button ng-click="disableInput()">Disable Input</button>
+</body>
+</html>

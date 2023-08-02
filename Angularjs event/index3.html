@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="eventApp">
+
+<head>
+    <title>AngularJS Events</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="EventController">
+
+    <h1>AngularJS Events Example</h1>
+
+    <!-- ng-click event example -->
+    <button ng-click="showAlert()">Click me!</button>
+
+    <!-- ng-mousemove event example -->
+    <div ng-mousemove="handleMouseMove($event)">
+        Move your mouse over this div to see the coordinates.
+    </div>
+    
+    <!-- Display coordinates -->
+    <p ng-show="mouseX !== undefined && mouseY !== undefined">
+        Mouse X: {{ mouseX }}, Mouse Y: {{ mouseY }}
+    </p>
+
+    <script>
+        // AngularJS App Module
+        var app = angular.module('eventApp', []);
+
+        // AngularJS Controller
+        app.controller('EventController', function ($scope) {
+            // Function to handle ng-click event
+            $scope.showAlert = function () {
+                alert('You clicked the button!');
+            };
+
+            // Function to handle ng-mousemove event
+            $scope.handleMouseMove = function ($event) {
+                $scope.mouseX = $event.pageX;
+                $scope.mouseY = $event.pageY;
+            };
+        });
+    </script>
+</body>
+
+</html>

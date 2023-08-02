@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>AngularJS Select Options</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="myController">
+  <h1>Select an Option:</h1>
+
+  <!-- Using ng-options -->
+  <label>Using ng-options:</label>
+  <select ng-model="selectedOption" ng-options="option for option in options">
+  </select>
+  <p>You selected: {{ selectedOption }}</p>
+
+  <!-- Using ng-repeat -->
+  <label>Using ng-repeat:</label>
+  <select ng-model="selectedOptionRepeat">
+    <option ng-repeat="option in options" value="{{ option }}">{{ option }}</option>
+  </select>
+  <p>You selected: {{ selectedOptionRepeat }}</p>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('myController', function ($scope) {
+        $scope.options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+        $scope.selectedOption = $scope.options[0];
+        $scope.selectedOptionRepeat = $scope.options[0];
+      });
+  </script>
+</body>
+
+</html>

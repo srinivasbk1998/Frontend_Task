@@ -1,0 +1,29 @@
+/* Reset some default styles */
+body {
+    margin: 2;
+    padding: 2;
+  }
+  
+  /* Style the image box container */
+  .image-box {
+    display: inline-block; /* Change to block if you want the box to take the full width */
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Set the shadow effect */
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+    overflow: hidden; /* Optional: Ensure the shadow doesn't overflow */
+    transition: box-shadow 0.3s; /* Optional: Add a smooth transition effect */
+  }
+  
+  
+  .image-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+
+  .image-box:hover {
+    box-shadow: 0 8px 16px rgba(50, 31, 31, 0.2);
+    cursor: pointer; /* Optional: Change cursor on hover */
+  }
+  

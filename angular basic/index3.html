@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>AngularJS Data Binding</title>
+  <script>
+    angular.module('myApp', [])
+      .controller('MyController', function($scope) {
+        // Sample initial data
+        $scope.items = [
+          { name: 'Item 1', value: 'Value 1' },
+          { name: 'Item 2', value: 'Value 2' },
+          { name: 'Item 3', value: 'Value 3' }
+        ];
+  
+        // Function to add a new item to the list
+        $scope.addItem = function() {
+          var newItemNumber = $scope.items.length + 1;
+          $scope.items.push({ name: 'Item ' + newItemNumber, value: 'Value ' + newItemNumber });
+        };
+      });
+  </script>
+  
+</head>
+
+<body>
+  <div ng-controller="MyController">
+    <h1>My Item List</h1>
+    <div ng-repeat="item in items">
+      <label>{{item.name}}</label>
+      <input type="text" ng-model="item.value" />
+    </div>
+    <button ng-click="addItem()">Add Item</button>
+  </div>
+</body>
+
+</html>

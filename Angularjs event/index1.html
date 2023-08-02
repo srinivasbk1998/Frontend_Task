@@ -1,0 +1,15 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS MySQL App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  <h1>Data from MySQL Database</h1>
+  <ul>
+    <li ng-repeat="item in data">{{ item.column1 }} - {{ item.column2 }}</li>
+  </ul>
+</body>
+</html>

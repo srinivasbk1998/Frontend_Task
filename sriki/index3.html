@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Counter</title>
+  <style>
+    /* Styling for the button and counter display */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    #counter-display {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button id="countBtn">Count</button>
+  <span id="counter-display">0</span>
+
+  <script>
+    // Get the button and counter display elements by their IDs
+    const countBtn = document.getElementById('countBtn');
+    const counterDisplay = document.getElementById('counter-display');
+
+    let count = 0;
+
+    // Add a click event listener to the button
+    countBtn.addEventListener('click', () => {
+      // Increment the count value and update the counter display
+      count++;
+      counterDisplay.textContent = count;
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+function greet(name) {
+    console.log(`Hello, ${name}! My name is ${this.name}.`);
+  }
+  
+  const person1 = {
+    name: 'Alice',
+  };
+  
+  const person2 = {
+    name: 'Bob',
+  };
+  
+
+  greet.call(person1, 'David'); 
+  greet.call(person2, 'Eve');   
+  
+  
+  greet.apply(person1, ['Frank']); 
+  greet.apply(person2, ['Grace']);
+  

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Animations and Paginations</title>
+  <style>
+    /* CSS Animation */
+    .animate {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      position: relative;
+      animation-name: slideIn;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes slideIn {
+      0% {
+        left: 0;
+      }
+      50% {
+        left: 50%;
+      }
+      100% {
+        left: 0;
+      }
+    }
+
+    /* CSS Pagination */
+    .pagination {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      padding: 0;
+    }
+
+    .pagination li {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #3498db;
+      cursor: pointer;
+    }
+
+    .pagination li:hover {
+      background-color: #2980b9;
+    }
+
+    /* With spaces */
+    .pagination-with-spaces {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .pagination-with-spaces li {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #e74c3c;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .pagination-with-spaces li:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="animate"></div>
+
+  <ul class="pagination">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul class="pagination-with-spaces">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+</html>

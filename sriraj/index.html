@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Table with JSON data and Sorting</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    th {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- The table rows will be populated dynamically using JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    // Function to sort the table based on a specific column
+    function sortTable(columnIndex) {
+      let table = document.getElementById("data-table");
+      let rows = Array.from(table.getElementsByTagName("tr"));
+      
+      // Remove the table header row from the sorting process
+      rows.shift();
+
+      rows.sort((rowA, rowB) => {
+        let cellA = rowA.getElementsByTagName("td")[columnIndex].innerText;
+        let cellB = rowB.getElementsByTagName("td")[columnIndex].innerText;
+        return cellA.localeCompare(cellB);
+      });
+
+      // Re-attach the sorted rows to the table body
+      let tbody = table.getElementsByTagName("tbody")[0];
+      tbody.innerHTML = '';
+      rows.forEach(row => {
+        tbody.appendChild(row);
+      });
+    }
+
+    // Function to load JSON data and populate the table
+    function loadDataAndPopulateTable() {
+      fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+          let tableBody = document.querySelector("#data-table tbody");
+
+          data.forEach((item, index) => {
+            let row = document.createElement("tr");
+            row.innerHTML = `<td>${item.Name}</td><td>${item.Age}</td><td>${item.Country}</td>`;
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => console.error("Error loading data:", error));
+    }
+
+    // Function to demonstrate the usage of $index, $odd, and $even
+    function demonstrateSpecialVariables() {
+      let tableRows = document.querySelectorAll("#data-table tbody tr");
+      tableRows.forEach((row, index) => {
+        if (index % 2 === 0) {
+          // Even row
+          row.style.backgroundColor = "lightblue";
+        } else {
+          // Odd row
+          row.style.backgroundColor = "lightyellow";
+        }
+      });
+    }
+
+    // Load data and populate the table on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      loadDataAndPopulateTable();
+      demonstrateSpecialVariables();
+    });
+  </script>
+</body>
+
+</html>

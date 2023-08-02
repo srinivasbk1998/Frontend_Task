@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter with Prototypes</title>
+  <style>
+    /* Styling for the button and counter display */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    #counter-display {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button id="countBtn">Count</button>
+  <span id="counter-display">0</span>
+
+  <script>
+    // Define a constructor function for the Counter
+    function Counter() {
+      this.count = 0;
+    }
+
+    // Add a method to the Counter's prototype to increment the count
+    Counter.prototype.increment = function () {
+      this.count++;
+      this.updateCounterDisplay();
+    };
+
+    // Add a method to the Counter's prototype to update the display
+    Counter.prototype.updateCounterDisplay = function () {
+      const counterDisplay = document.getElementById('counter-display');
+      counterDisplay.textContent = this.count;
+    };
+
+    // Create an instance of the Counter
+    const counterInstance = new Counter();
+
+    // Get the button element
+    const countBtn = document.getElementById('countBtn');
+
+    // Add a click event listener to the button
+    countBtn.addEventListener('click', () => {
+      // Increment the count using the prototype method
+      counterInstance.increment();
+    });
+  </script>
+</body>
+</html>

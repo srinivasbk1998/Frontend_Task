@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Animation Example</title>
+  <style>
+    /* CSS styles for animations */
+    .fade-enter, .fade-leave {
+      transition: opacity 1s;
+    }
+    .fade-enter-active, .fade-leave-active {
+      opacity: 1;
+    }
+    .fade-enter, .fade-leave-active {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div ng-controller="MyController">
+    <button ng-click="toggleElement()">Toggle Element</button>
+    <div ng-show="showElement" ng-animate="'fade'">
+      <!-- Content to be shown/hidden -->
+      <h1>Hello, this is the element to be shown/hidden!</h1>
+    </div>
+  </div>
+  <!-- Include AngularJS and your application script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', ['ngAnimate']);
+
+    app.controller('MyController', function($scope) {
+      $scope.showElement = true;
+
+      $scope.toggleElement = function() {
+        $scope.showElement = !$scope.showElement;
+      };
+    });
+  </script>
+</body>
+</html>

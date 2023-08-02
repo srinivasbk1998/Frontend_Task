@@ -1,0 +1,24 @@
+/* styles.css */
+.multiple-backgrounds {
+    /* Define the background images and their sizes */
+    background-image: 
+        url('https://i2.wp.com/www.newsbugz.com/wp-content/uploads/2021/05/jr-ntr-RRR-movie-scaled.jpg?resize=1075%2C1536&ssl=1'), /* First background image */
+        url('https://www.realitypapers.co/wp-content/uploads/2022/03/RRR-Movie-Cast.jpeg'), /* Second background image */
+        url('image3.jpg'); /* Third background image */
+
+    /* Set the size and positioning for each background image */
+    background-size:
+        50% auto,     /* First background image: 50% width and original height */
+        cover,         /* Second background image: cover the entire element */
+        contain;       /* Third background image: fit inside the element, maintaining aspect ratio */
+
+    /* Set the position for each background image */
+    background-position:
+        top left,      /* First background image: top-left corner */
+        center center, /* Second background image: centered */
+        bottom right;  /* Third background image: bottom-right corner */
+
+    /* Set other styles for the element, like width, height, etc. */
+    width: 600px;
+    height: 400px;
+}

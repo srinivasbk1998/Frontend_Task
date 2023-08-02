@@ -1,0 +1,13 @@
+selector {
+    padding: top right bottom left;
+  }
+  div {
+    padding: 10px 20px 15px 5px;
+  }
+  selector {
+    margin: top right bottom left;
+  }
+  p {
+    margin: 10px 20px 15px 5px;
+  }
+        

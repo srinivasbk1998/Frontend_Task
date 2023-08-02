@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Styling even list items */
+li:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Styling odd list items */
+li:nth-child(odd) {
+    background-color: #d4d4d4;
+}
+
+/* Adding some space between list items */
+li {
+    padding: 10px;
+}

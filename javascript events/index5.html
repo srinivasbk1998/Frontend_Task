@@ -1,0 +1,15 @@
+// Assume that the JSON object is stored in a variable named 'data'
+
+// Accessing top-level properties
+const name = data.name; // "John Doe"
+const age = data.age; // 30
+const email = data.email; // "john.doe@example.com"
+
+// Accessing nested properties
+const city = data.address.city; // "New York"
+const zipCode = data.address.zipCode; // "10001"
+
+// Accessing elements of the hobbies array
+const firstHobby = data.hobbies[0]; // "reading"
+const secondHobby = data.hobbies[1]; // "gaming"
+const thirdHobby = data.hobbies[2]; // "cooking"
